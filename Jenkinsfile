@@ -1,8 +1,8 @@
 pipeline {
       agent any
-    parameters { choice(name: 'ACTION', choices: ['apply', 'delete'], description: select the action to perform)}
+    parameters { choice(name: 'ACTION', choices: ['apply', 'delete'], description: 'select the action to perform')}
     
-    stages: {
+    stages {
 
         stage('parameter validation') {
             steps{
