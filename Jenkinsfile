@@ -1,8 +1,5 @@
 pipeline {
       agent any
-      environment {
-        KUBECONFIG = "/root/.kube/config"
-    }
     parameters { choice(name: 'ACTION', choices: ['apply', 'delete'], description: 'select the action to perform')}
     
     stages {
@@ -10,7 +7,7 @@ pipeline {
         stage('parameter validation') {
             steps{
                 script{
-                    if ("${params.PERSON}" == '') {
+                    if ("${params.ACTION}" == '') {
                         echo "please pass the parameter"
                     } else{
                         echo "the option is selected : ${params.ACTION}"
