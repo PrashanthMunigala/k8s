@@ -1,7 +1,7 @@
 pipeline {
       agent any
       environment {
-        KUBECONFIG = "/path/to/your/kubeconfig"
+        KUBECONFIG = "/root/.kube/config"
     }
     parameters { choice(name: 'ACTION', choices: ['apply', 'delete'], description: 'select the action to perform')}
     
