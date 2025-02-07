@@ -7,10 +7,10 @@ pipeline {
         stage('parameter validation') {
             steps{
                 script{
-                    if (${params.PERSON} == '') {
+                    if ("${params.PERSON}" == '') {
                         echo 'please pass the parameter'
                     } else{
-                        echo 'the option is selected : (${params.PERSON})'
+                        echo "the option is selected : ${params.PERSON}"
                     }
                 }
             }
