@@ -22,7 +22,7 @@ pipeline {
             }
             }
             steps {
-                sh 'kubectl apply --validation=false -f deploy.yaml'
+                sh 'kubectl apply --validate=false -f deploy.yaml'
             }
         }
         stage('delete') {
